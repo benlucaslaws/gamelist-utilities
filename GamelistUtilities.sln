@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamelistUtilities", "GamelistUtilities\GamelistUtilities.csproj", "{21722E4C-87FF-4526-A37E-95F5293E6C73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamelistUtilities.Tests", "GamelistUtilities.Tests\GamelistUtilities.Tests.csproj", "{59975737-2838-45B2-B489-8B41E7D71205}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21722E4C-87FF-4526-A37E-95F5293E6C73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21722E4C-87FF-4526-A37E-95F5293E6C73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21722E4C-87FF-4526-A37E-95F5293E6C73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21722E4C-87FF-4526-A37E-95F5293E6C73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59975737-2838-45B2-B489-8B41E7D71205}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59975737-2838-45B2-B489-8B41E7D71205}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59975737-2838-45B2-B489-8B41E7D71205}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59975737-2838-45B2-B489-8B41E7D71205}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
