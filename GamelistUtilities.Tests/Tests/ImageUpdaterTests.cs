@@ -12,7 +12,7 @@ namespace GamelistUtilities.Tests.Tests
     public class ImageUpdaterTests
     {
         [Fact]
-        public void Test_ReplaceBlankImage()
+        public void Test_PopulateBlankImagePath_ReplaceBlankImage()
         {
             Game game = new Game()
             {
@@ -29,7 +29,7 @@ namespace GamelistUtilities.Tests.Tests
         }
 
         [Fact]
-        public void Test_DontReplaceNonBlankImage()
+        public void Test_PopulateBlankImagePath_DontReplaceNonBlankImage()
         {
             Game game = new Game()
             {
