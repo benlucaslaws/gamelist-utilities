@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameDataUpdaters\ImageUpdater.cs" />
     <Compile Include="Serializers\GameListXmlSerializer.cs" />
     <Compile Include="XmlDataObjects\Game.cs" />
     <Compile Include="XmlDataObjects\GameList.cs" />
