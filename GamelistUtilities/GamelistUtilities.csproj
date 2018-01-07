@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameDataUpdaters\ImageUpdater.cs" />
+    <Compile Include="GameDataUpdaters\NameUpdater.cs" />
     <Compile Include="Serializers\GameListXmlSerializer.cs" />
     <Compile Include="XmlDataObjects\Game.cs" />
     <Compile Include="XmlDataObjects\GameList.cs" />
