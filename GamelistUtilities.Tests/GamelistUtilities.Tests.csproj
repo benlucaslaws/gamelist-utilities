@@ -67,6 +67,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Tests\CharExtensionsTests.cs" />
     <Compile Include="Tests\DescriptionUpdaterTests.cs" />
     <Compile Include="Tests\ImageUpdaterTests.cs" />
     <Compile Include="Tests\NameUpdaterTests.cs" />

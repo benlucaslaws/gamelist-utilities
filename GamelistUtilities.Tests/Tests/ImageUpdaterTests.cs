@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace GamelistUtilities.Tests.Tests
+namespace GamelistUtilities.Tests
 {
     public class ImageUpdaterTests
     {

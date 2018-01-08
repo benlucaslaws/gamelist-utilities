@@ -13,7 +13,6 @@ namespace GamelistUtilities.GameDataUpdaters
         private const string ARCADE_HISTORY_HEADER_REGEX = "^.*(C).*";
         private const string ARCADE_HISTORY_FOOTER_REGEX = "\\(C\\) arcade-history.com$";
 
-
         public void RemoveArcadeHistoryHeader(Game game)
         {
             Regex headerRegex = new Regex(ARCADE_HISTORY_HEADER_REGEX);
