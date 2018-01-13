@@ -56,48 +56,39 @@ namespace GamelistUtilities.Tests
             Assert.Equal(expectedValue, actualValue);
         }
 
-        [Fact]
-        public void Test_ReplaceUnrenderableCharacterReferences_ReplacesHexadecimalReference()
+        [Theory]
+        [InlineData("Game &#x26; Game", '&', '&', "Game & Game")]
+        [InlineData("Game &#38; Game", '&', '&', "Game & Game")]
+        [InlineData("Game &amp; Game", '&', '&', "Game & Game")]
+        [InlineData("Game & Game", '&', '&', "Game & Game")]
+        [InlineData("Game & Game", '&', '+', "Game + Game")]
+        public void Test_ReplaceUnrenderableCharacterReferences(string description, char oldChar, char newChar, string expectedValue)
         {
             Game game = new Game()
             {
-                Description = "Game &#x26; Game"
+                Description = description
             };
 
             DescriptionUpdater descriptionUpdater = new DescriptionUpdater();
-            descriptionUpdater.ReplaceUnrenderableCharacterReferences(game, '&');
+            descriptionUpdater.ReplaceUnrenderableCharacterReferences(game, oldChar, newChar);
             string actualValue = game.Description;
-            string expectedValue = "Game & Game";
             Assert.Equal(expectedValue, actualValue);
         }
 
-        [Fact]
-        public void Test_ReplaceUnrenderableCharacterReferences_ReplacesDecimalReference()
+        [Theory]
+        [InlineData("げえむ", true)]
+        [InlineData("ゲーム", true)]
+        [InlineData("競技", true)]
+        [InlineData("Game", false)]
+        public void Test_ContainsJapaneseCharacters(string description, bool expectedValue)
         {
             Game game = new Game()
             {
-                Description = "Game &#38; Game"
+                Description = description
             };
 
             DescriptionUpdater descriptionUpdater = new DescriptionUpdater();
-            descriptionUpdater.ReplaceUnrenderableCharacterReferences(game, '&');
-            string actualValue = game.Description;
-            string expectedValue = "Game & Game";
-            Assert.Equal(expectedValue, actualValue);
-        }
-
-        [Fact]
-        public void Test_ReplaceUnrenderableCharacterReferences_ReplacesHtmlEncodedReference()
-        {
-            Game game = new Game()
-            {
-                Description = "Game &amp; Game"
-            };
-
-            DescriptionUpdater descriptionUpdater = new DescriptionUpdater();
-            descriptionUpdater.ReplaceUnrenderableCharacterReferences(game, '&');
-            string actualValue = game.Description;
-            string expectedValue = "Game & Game";
+            bool actualValue = descriptionUpdater.ContainsJapaneseCharacters(game);
             Assert.Equal(expectedValue, actualValue);
         }
     }
