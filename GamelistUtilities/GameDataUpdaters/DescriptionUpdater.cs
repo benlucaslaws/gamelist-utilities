@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using GamelistUtilities.Extensions;
 
 namespace GamelistUtilities.GameDataUpdaters
 {
@@ -29,6 +30,27 @@ namespace GamelistUtilities.GameDataUpdaters
             formattedDescription = footerRegex.Replace(game.Description, string.Empty);
             formattedDescription = formattedDescription.TrimEnd();
             game.Description = formattedDescription;
+        }
+
+        public void ReplaceUnrenderableCharacterReferences(Game game, char oldChar, char? newChar = null)
+        {
+            if (newChar == null)
+            {
+                newChar = oldChar;
+            }
+
+            string formattedDecription = game.Description;
+            string replacementCharacterString = newChar.ToString();
+            string hexReference = oldChar.ToHexadecimalReference();
+            string decReference = oldChar.ToDecimalReference();
+            string htmlEncodedReference = oldChar.ToHtmlEncoded();
+            formattedDecription = formattedDecription
+                .Replace(oldChar, newChar.Value)
+                .Replace(hexReference, replacementCharacterString)
+                .Replace(decReference, replacementCharacterString)
+                .Replace(htmlEncodedReference, replacementCharacterString);
+            game.Description = formattedDecription;
+
         }
     }
 }

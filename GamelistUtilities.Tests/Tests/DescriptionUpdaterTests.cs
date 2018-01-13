@@ -55,5 +55,50 @@ namespace GamelistUtilities.Tests
             string expectedValue = "Game (C) 1992 Game Company\n\nDescription";
             Assert.Equal(expectedValue, actualValue);
         }
+
+        [Fact]
+        public void Test_ReplaceUnrenderableCharacterReferences_ReplacesHexadecimalReference()
+        {
+            Game game = new Game()
+            {
+                Description = "Game &#x26; Game"
+            };
+
+            DescriptionUpdater descriptionUpdater = new DescriptionUpdater();
+            descriptionUpdater.ReplaceUnrenderableCharacterReferences(game, '&');
+            string actualValue = game.Description;
+            string expectedValue = "Game & Game";
+            Assert.Equal(expectedValue, actualValue);
+        }
+
+        [Fact]
+        public void Test_ReplaceUnrenderableCharacterReferences_ReplacesDecimalReference()
+        {
+            Game game = new Game()
+            {
+                Description = "Game &#38; Game"
+            };
+
+            DescriptionUpdater descriptionUpdater = new DescriptionUpdater();
+            descriptionUpdater.ReplaceUnrenderableCharacterReferences(game, '&');
+            string actualValue = game.Description;
+            string expectedValue = "Game & Game";
+            Assert.Equal(expectedValue, actualValue);
+        }
+
+        [Fact]
+        public void Test_ReplaceUnrenderableCharacterReferences_ReplacesHtmlEncodedReference()
+        {
+            Game game = new Game()
+            {
+                Description = "Game &amp; Game"
+            };
+
+            DescriptionUpdater descriptionUpdater = new DescriptionUpdater();
+            descriptionUpdater.ReplaceUnrenderableCharacterReferences(game, '&');
+            string actualValue = game.Description;
+            string expectedValue = "Game & Game";
+            Assert.Equal(expectedValue, actualValue);
+        }
     }
 }
