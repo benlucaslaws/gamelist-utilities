@@ -13,7 +13,7 @@ namespace GamelistUtilities.GameDataUpdaters
     {
         private const string ARCADE_HISTORY_HEADER_REGEX = "^.*(C).*";
         private const string ARCADE_HISTORY_FOOTER_REGEX = "\\(C\\) arcade-history.com$";
-        private const string JAPANESE_CHARACTER_REGEX = "/[\\u3000-\\u303F]|[\\u3040-\\u309F]|[\\u30A0-\\u30FF]|[\\uFF00-\\uFFEF]|[\\u4E00-\\u9FAF]|[\\u2605-\\u2606]|[\\u2190-\\u2195]|\\u203B/g";
+        private const string JAPANESE_CHARACTER_REGEX = "[\\u3000-\\u303F]|[\\u3040-\\u309F]|[\\u30A0-\\u30FF]|[\\uFF00-\\uFFEF]|[\\u4E00-\\u9FAF]|[\\u2605-\\u2606]|[\\u2190-\\u2195]|\\u203B";
 
         public void RemoveArcadeHistoryHeader(Game game)
         {

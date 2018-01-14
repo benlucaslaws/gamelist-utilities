@@ -100,5 +100,20 @@ namespace GamelistUtilities.Tests
             string expectedValue = "The Game: Subtitle";
             Assert.Equal(expectedValue, actualValue);
         }
+
+        [Theory]
+        [InlineData("The Game (USA)", true)]
+        [InlineData("The Game", false)]
+        public void Test_ContainsBrackets(string name, bool expectedValue)
+        {
+            Game game = new Game()
+            {
+                Name = name
+            };
+
+            NameUpdater nameUpdater = new NameUpdater();
+            bool actualValue = nameUpdater.ContainsBrackets(game);
+            Assert.Equal(expectedValue, actualValue);
+        }
     }
 }

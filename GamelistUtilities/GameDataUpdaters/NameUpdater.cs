@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace GamelistUtilities.GameDataUpdaters
@@ -11,6 +12,7 @@ namespace GamelistUtilities.GameDataUpdaters
     {
         private const string PREFIX_THE = "The ";
         private const string SUFFIX_THE = ", The";
+        private const string BRACKETS_REGEX = "\\(.*\\)";
 
         public void RemoveSpaceBeforeColons(Game game)
         {
@@ -57,6 +59,12 @@ namespace GamelistUtilities.GameDataUpdaters
             return possibleSuffixPositions
                 .Where(position => position >= 0)
                 .Min();
+        }
+
+        public bool ContainsBrackets(Game game)
+        {
+            Regex bracketsRegex = new Regex(BRACKETS_REGEX);
+            return bracketsRegex.IsMatch(game.Name);
         }
     }
 }
