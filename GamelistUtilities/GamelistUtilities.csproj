@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Extensions\CharExtensions.cs" />
     <Compile Include="GameDataUpdaters\DescriptionUpdater.cs" />
+    <Compile Include="GameDataUpdaters\GameListUpdater.cs" />
     <Compile Include="GameDataUpdaters\ImageUpdater.cs" />
     <Compile Include="GameDataUpdaters\NameUpdater.cs" />
     <Compile Include="Serializers\GameListXmlSerializer.cs" />

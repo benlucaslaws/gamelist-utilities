@@ -69,6 +69,7 @@
   <ItemGroup>
     <Compile Include="Tests\CharExtensionsTests.cs" />
     <Compile Include="Tests\DescriptionUpdaterTests.cs" />
+    <Compile Include="Tests\GameListUpdaterTests.cs" />
     <Compile Include="Tests\ImageUpdaterTests.cs" />
     <Compile Include="Tests\NameUpdaterTests.cs" />
     <Compile Include="Tests\SerializationTests.cs" />
